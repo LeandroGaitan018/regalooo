@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #ff7b8a, #5aff70);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: pop 1s ease;
+  color:#8704af
+}
+
+button {
+  padding: 18px 40px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff6f91, #ff9671);
+  color: white;
+  transition: transform 0.1s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#gif {
+  margin-top: 30px;
+  max-width: 400px;
+  display: none;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  animation: explode 0.8s ease;
+}
+
+/* Animaciones */
+@keyframes explode {
+  0% { transform: scale(0) rotate(-10deg); }
+  60% { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+/* Confeti */
+.confetti {
+  position: absolute;
+  top: -10px;
+  font-size: 140px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(80vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+
+.confetti-img {
+  position: absolute;
+  top: -40px;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+#gif-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+
+#nextBtn {
+  display: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #6a89cc, #82ccdd);
+  color: white;
+}
+#message {
+  font-size: 1.4rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  text-align: center;
+  max-width: 90%;
+}
+
+
+body.step1 {
+  background: radial-gradient(circle, #ffdde1, #ee9ca7);
+}
+
+body.step2 {
+  background: radial-gradient(circle, #a1c4fd, #c2e9fb);
+}
