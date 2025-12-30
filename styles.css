@@ -5,27 +5,38 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle, #ff7b8a, #5aff70);
+  background: radial-gradient(circle, #20B2AA, #32CD32);
   font-family: Arial, sans-serif;
   overflow: hidden;
   text-align: center;
+}
+
+#initial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+body.viewing #initial-content {
+  display: none;
 }
 
 h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   animation: pop 1s ease;
-  color:#8704af
+  color:#fff0f0;
 }
 
 button {
   padding: 18px 40px;
   font-size: 1.3rem;
-  border: none;
+  border: solid rgb(255, 104, 44) 0.2em;
   border-radius: 40px;
   cursor: pointer;
-  background: linear-gradient(45deg, #ff6f91, #ff9671);
-  color: white;
+  background: #169992;
+  color: rgb(255, 255, 255);
   transition: transform 0.1s;
 }
 
@@ -34,12 +45,16 @@ button:active {
 }
 
 #gif {
-  margin-top: 30px;
   max-width: 400px;
+  width: 90%;
   display: none;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.3);
   animation: explode 0.8s ease;
+}
+
+body.viewing #gif {
+  display: block;
 }
 
 /* Animaciones */
@@ -69,7 +84,6 @@ button:active {
   }
 }
 
-
 .confetti-img {
   position: absolute;
   top: -40px;
@@ -80,38 +94,162 @@ button:active {
 }
 
 #gif-container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+body.viewing #gif-container {
+  display: flex;
+}
+
+#content-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 25px;
+  flex: 1;
 }
 
-
-#nextBtn {
-  display: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
+.arrow-btn {
+  padding: 15px 25px;
+  font-size: 2rem;
+  border: solid rgb(250, 117, 65) 0.2em;
+  border-radius: 50%;
   cursor: pointer;
-  background: linear-gradient(45deg, #6a89cc, #82ccdd);
+  background: #22bbb3;
   color: white;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
+
+.arrow-btn:hover {
+  background: #1db3ab;
+  transform: scale(1.1);
+}
+
+.arrow-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 #message {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
   opacity: 0;
   transition: opacity 0.6s ease;
   text-align: center;
   max-width: 90%;
+  color: rgb(17, 2, 2);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-
 body.step1 {
-  background: radial-gradient(circle, #ffdde1, #ee9ca7);
+  background: radial-gradient(circle, #296cd6, #c2e9fb);
 }
 
 body.step2 {
-  background: radial-gradient(circle, #a1c4fd, #c2e9fb);
+  background: radial-gradient(circle, #296cd6, #c2e9fb);
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0.6;
+  animation: float 10s infinite ease-in-out;
+}
+
+#closeGame,
+#closeReasons {
+  margin-top: 20px;
+  background: #E91E63;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#closeGame:hover,
+#closeReasons:hover {
+  background: #C2185B;
+  transform: scale(1.05);
+}
+
+#memory-game.hidden,
+#reasons-list.hidden {
+  display: none;
+}
+
+#memory-game h2,
+#reasons-list h2 {
+  color: #169992;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+#quiz {
+  background: rgba(255,255,255,0.9);
+  padding: 3px;
+  border-radius: 25px;
+  max-width: 600px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#quizOptions label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+#quizResult {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+#quiz h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+#finishQuiz {
+  display: block;
+  margin: 20px auto 0;
+}
+
+
+
+.hidden {
+  display: none !important;
 }
