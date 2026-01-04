@@ -11,14 +11,14 @@ body {
   text-align: center;
 }
 
-#initial-content {
+#inicio {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
 
-body.viewing #initial-content {
+body.viewing #inicio {
   display: none;
 }
 
@@ -69,7 +69,7 @@ body.viewing #gif {
   100% { transform: scale(1); }
 }
 
-/* Confeti */
+
 .confetti {
   position: absolute;
   top: -10px;
@@ -115,7 +115,7 @@ body.viewing #gif-container {
   flex: 1;
 }
 
-.arrow-btn {
+.flecha-btn {
   padding: 15px 25px;
   font-size: 2rem;
   border: solid rgb(250, 117, 65) 0.2em;
@@ -131,17 +131,17 @@ body.viewing #gif-container {
   transition: all 0.2s;
 }
 
-.arrow-btn:hover {
+.flecha-btn:hover {
   background: #1db3ab;
   transform: scale(1.1);
 }
 
-.arrow-btn:disabled {
+.flecha-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
 }
 
-#message {
+#mensaje {
   font-size: 1.8rem;
   font-weight: bold;
   opacity: 0;

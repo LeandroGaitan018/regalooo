@@ -2,6 +2,7 @@ const gifs = [
   "gifs/200w.gif",
   "confetti/images (2).jpeg",
   "gifs/ISgw.gif",
+  "confetti/WhatsApp Image 2026-01-04 at 00.21.02.jpeg",
   "gifs/source.gif",
   "gifs/curva.mp4"
 ];
@@ -14,16 +15,17 @@ const confettiImages = [
   "confetti/Judy_Hopps.webp"
 ];
 
-const messages = [
-  "Te quiero un montoooooon! mira esto",
-  "Us??",
-  "CUESTIONARIO DE ZOOTOPIA(la 1 por lo menos) A VER CUANTO SABES",
-  "Te quiero un monton, mas que a nadie en un largo tiempo. Me alegro de haberte conocido y espero que siempre encuentres un lugar en mi "
+const mensajes = [
+  "Te amo un montoooooon! Muero de ganas de estar asi con vos mi vida",
+  "Us <3 Us <3 Us <3",
+  "CUESTIONARIO DE ZOOTOPIA(la 1 por lo menos) A VER CUANTO SABES(sabes todo realmente)",
+  "Te amo amor (te juro que soy re manco y me costó)",
+  "Te amo mucho amor, mas que a nadie y vos sabes que es verdad. Me alegro de haberte conocido, me cambiaste el año y eso que apenas empieza. En vos encuentro una cantidad de amor la cual me agarró de sorpresa, sos esa persona con la que quiero compartir todo y espero que siempre encuentres un lugar en mi, sos a quien mas ame en mi vida hasta ahora y no le diria eso a cualquiera TE AMO KRIS TE AMO MUCHO MI AMOR "
 ];
 
 let currentStep = 0;
 const memoryGame = document.getElementById('memory-game');
-const message = document.getElementById("message");
+const mensaje = document.getElementById("mensaje");
 const button = document.getElementById("btn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -43,8 +45,8 @@ function showStep(index) {
   currentStep = index;
 
   gif.src = gifs[index];
-  message.textContent = messages[index];
-  message.style.opacity = 1;
+  mensaje.textContent = mensajes[index];
+  mensaje.style.opacity = 1;
 
   prevBtn.disabled = index === 0;
   nextBtn.disabled = index === gifs.length - 1;
@@ -91,7 +93,7 @@ function goToPrevious() {
 }
 
 function explosion() {
-  // confetti
+
   for (let i = 0; i < 25; i++) {
     const img = document.createElement("img");
     img.src = confettiImages[Math.floor(Math.random() * confettiImages.length)];
@@ -108,29 +110,29 @@ function explosion() {
 
 const quizData = [
   {
-    question: "¿Cómo se llama la protagonista coneja?",
+    question: "¿Cómo se llama la protagonista?",
     options: ["Judy Hops", "Judy Hopps", "Jenny Hopps"],
     correct: 1
   },
   {
-    question: "¿Qué animal es Nick Wilde?",
-    options: ["Lobo", "Perro", "Zorro"],
-    correct: 2
-  },
-  {
-    question: "¿Cuál de estas profesiones tiene Judy en algún momento de la película?",
-    options: ["Vendedora de zanahorias", "Policía", "Medidora de parquímetros"],
-    correct: "any"
-  },
-  {
-    question: "¿Quién es el jefe de policía?",
-    options: ["Nick Wilde", "Jefe Bogo", "Flash"],
+    question: "¿Cual es el nombre de el zorro?",
+    options: ["Nick wild", "Nick Wilde", "Nico de wilde"],
     correct: 1
   },
   {
-    question: "¿Qué animal es Flash?",
-    options: ["Tortuga", "Perezoso", "Perezoso 🦥"],
+    question: "¿Cuantas multas queria poner Judy en su primer dia de trabajo?",
+    options: ["30", "100", "200"],
     correct: 2
+  },
+  {
+    question: "¿De que color queria el 'hijo' de Nick el Jumbo Pop?",
+    options: ["verde", "rojo", "azul"],
+    correct: 1
+  },
+  {
+    question: "¿Quien es la persona mas honesta, creativa, hermosa y amorosa del mundo?",
+    options: ["Kris", "KRIIIIIIS", "Kris mi amor"],
+    correct: "any"
   }
 ];
 
@@ -177,7 +179,6 @@ quizNext.addEventListener("click", () => {
 
   const currentQuestion = quizData[quizIndex];
   
-  // Si correct es "any", cualquier respuesta es correcta
   if (currentQuestion.correct === "any") {
     quizScore += 2;
   } else if (parseInt(selected.value) === currentQuestion.correct) {
