@@ -4,7 +4,7 @@ const gifs = [
   "gifs/ISgw.gif",
   "confetti/WhatsApp Image 2026-01-04 at 00.21.02.jpeg",
   "gifs/source.gif",
-  "gifs/curva.mp4"
+  "gifs/kris.mp4"
 ];
 
 const confettiImages = [
@@ -30,7 +30,9 @@ const button = document.getElementById("btn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const gif = document.getElementById("gif");
+const audio = document.getElementById("bg-music");
 
+audio.volume = 0.030; // volumen entre 0.0 y 1.0 (ej: 20%)
 button.addEventListener("click", startExperience);
 prevBtn.addEventListener("click", goToPrevious);
 nextBtn.addEventListener("click", goToNext);
@@ -39,6 +41,10 @@ function startExperience() {
   document.body.classList.add("viewing", "step1");
   showStep(0);
   explosion();
+
+  audio.play().catch(err => {
+    console.log("El navegador bloqueó el audio:", err);
+  });
 }
 
 function showStep(index) {
