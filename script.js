@@ -20,7 +20,8 @@ const mensajes = [
   "Us <3 Us <3 Us <3",
   "CUESTIONARIO DE ZOOTOPIA(la 1 por lo menos) A VER CUANTO SABES(sabes todo realmente)",
   "Te amo amor (te juro que soy re manco y me costó)",
-  "Te amo mucho amor, mas que a nadie y vos sabes que es verdad. Me alegro de haberte conocido, me cambiaste el año y eso que apenas empieza. En vos encuentro una cantidad de amor la cual me agarró de sorpresa, sos esa persona con la que quiero compartir todo y espero que siempre encuentres un lugar en mi, sos a quien mas ame en mi vida hasta ahora y no le diria eso a cualquiera TE AMO KRIS TE AMO MUCHO MI AMOR "
+  "Te amo mucho amor, mas que a nadie y vos sabes que es verdad. Me alegro de haberte conocido, me cambiaste el año y eso que apenas empieza. En vos encuentro una cantidad de amor la cual me agarró de sorpresa, sos esa persona con la que quiero compartir todo y espero que siempre encuentres un lugar en mi, sos a quien mas ame en mi vida hasta ahora y no le diria eso a cualquiera TE AMO KRIS TE AMO MUCHO MI AMOR ",
+  "Te adoro"
 ];
 
 let currentStep = 0;
